@@ -1,2 +1,8 @@
 <h1>Home#index</h1>
-<p>Find me in app/views/home/index.html.erb</p>
+<%= current_user ? "Hola user: #{current_user.email}" : 'favor logearse'%>
+<% if current_user %>
+<%= link_to('log out' , session_path(current_user) , method: :delete) %>
+<%else%>
+<%= link_to('log in' , new_session_path)%>
+
+<%end %>%
