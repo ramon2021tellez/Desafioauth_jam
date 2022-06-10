@@ -11,6 +11,9 @@
   </head>
 
   <body>
+  <% flash.each do |_, value|%>
+  <div><%= value %></div>
+  <%end%>
     <%= yield %>
   </body>
 </html>
